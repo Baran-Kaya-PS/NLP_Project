@@ -45,11 +45,19 @@ def clean_subtitles(file_path):
     Cleans the subtitles in the given file by removing non-alphanumeric characters,
     stopwords, and lemmatizing the words.
     """
-    with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
-        content = file.read()
+    try:
+        with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
+            content = file.read()
+    except PermissionError:
+        print(f"Skipping {file_path} due to a permission error.")
+        return
 
     # Remove non-alphanumeric characters
     content = re.sub(r'\W+', ' ', content)
+    
+    # Remove the specified patterns
+    content = re.sub(r'^\d+\s*$', '', content)  # Removes lines containing only digits
+    content = re.sub(r'{\d+}{\d+}', '', content)  # Removes lines containing {digits}{digits}
 
     # Tokenize, remove stopwords, and lemmatize
     words = word_tokenize(content)
@@ -59,8 +67,12 @@ def clean_subtitles(file_path):
     cleaned_content = ' '.join(words)
 
     # Overwrite the original file with the cleaned content
-    with open(file_path, 'w', encoding='utf-8') as file:
-        file.write(cleaned_content)
+    try:
+        with open(file_path, 'w', encoding='utf-8') as file:
+            file.write(cleaned_content)
+    except PermissionError:
+        print(f"Skipping {file_path} due to a permission error.")
+        return
 
 
 def process_files(path):
@@ -73,10 +85,7 @@ def process_files(path):
                 file_path = os.path.join(root, file)
                 clean_subtitles(file_path)
                 print(f"Processed {file_path}")
-
-
-import os
-import zipfile
+                
 
 def unzip_single_file(path, filename):
     """
