@@ -9,19 +9,19 @@ def main():
     Path = os.path.join(os.getcwd(), 'sous-titres')
 
     # Unzip all files in the directory
-    #unzip_files(Path)
+    unzip_files(Path)
 
     # Process all .srt and .sub files in the directory
-    #process_files(Path)
+    process_files(Path)
 
     # Clean all subtitles in the directory
-    #clean_subtitles(Path)
+    clean_subtitles(Path)
 
     # Unzip a single file
-    #unzip_single_file(Path, 'example.zip')
+    unzip_single_file(Path, 'example.zip')
 
     # Remove numbers from all files in the directory
-    #remove_numbers_from_files(Path)
+    remove_numbers_from_files(Path)
 
     # Load the embeddings
     print("Loading embeddings from 'sentence_embeddings.npy'...")
@@ -29,7 +29,7 @@ def main():
     print(f"Loaded {len(loaded_embeddings)} embeddings successfully!")
 
     # Example query
-    query_sentence = "Avion"
+    query_sentence = "Voiture"
     print(f"\nQuery Sentence: {query_sentence}")
     
     # Obtain the embedding for the query sentence
@@ -46,7 +46,7 @@ def main():
     
     # Print the results
     print(f"\nTop 5 most similar sentences to the query '{query_sentence}':")
-    for i, (file_name, sentence, score) in enumerate(top_similar_sentences, 1):
+    for i, (file_name, sentence, score) in enumerate(top_similar_sentences[0], 1):
         print(f"{i}. {file_name}: {sentence.strip()} (Similarity Score: {score:.4f})")
 
 
