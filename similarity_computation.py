@@ -13,14 +13,16 @@ def find_most_similar_sentences(query_sentence, loaded_embeddings, sentences, to
     query_embeddings = obtain_embeddings(os.path.join(os.getcwd(), 'sous-titres'))
 
     # Compute the cosine similarity between the query embedding and all sentence embeddings
-    similarity_scores = np.dot(loaded_embeddings, query_embeddings.T) / (np.linalg.norm(loaded_embeddings, axis=1) * np.linalg.norm(query_embeddings, axis=1))
-
+    similarity_scores = []
+    for i in range(len(sentences)):
+        similarity_scores.append(compute_similarity(query_embeddings, loaded_embeddings[i]))
+        
     # Get the indices of the top N most similar sentences
-    top_indices = np.argsort(similarity_scores, axis=0)[::-1][:top_n]
+    top_indices = np.argsort(similarity_scores)[::-1][:top_n]
 
     # Get the file names, sentences, and similarity scores for the top N most similar sentences for each query sentence
     top_similar_sentences = []
-    for i in range(len(query_sentence)):
-        top_similar_sentences.append([(sentences[j][0], sentences[j][1], similarity_scores[j][i]) for j in top_indices[:, i]])
+    for i in range(len(top_indices)):
+        top_similar_sentences.append((sentences[top_indices[i]][0], sentences[top_indices[i]][1], similarity_scores[top_indices[i]]))
 
     return top_similar_sentences
