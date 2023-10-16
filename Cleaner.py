@@ -5,6 +5,8 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize, sent_tokenize
+from unidecode import unidecode
+
 
 
 def unzip_files(path):
@@ -166,3 +168,22 @@ def tokenize_text(text):
     tokenized_sentences = [[word for word in sentence if word not in stop_words] for sentence in tokenized_sentences]
 
     return tokenized_sentences
+
+
+def remove_accents_from_files(path):
+    """
+    Removes accents from all .srt, .sub, and .txt files in the given directory and its subdirectories.
+    """
+    for root, _, files in os.walk(path):
+        for file in files:
+            file_ext = os.path.splitext(file)[1]
+            if file_ext in ['.srt', '.sub', '.txt']:
+                file_path = os.path.join(root, file)
+                with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                    content = f.read()
+
+                content_without_accents = unidecode(content)
+
+                with open(file_path, 'w', encoding='utf-8') as f:
+                    f.write(content_without_accents)
+                print(f"Removed accents from {file_path}")

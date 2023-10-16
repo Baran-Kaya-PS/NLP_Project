@@ -19,10 +19,6 @@ def find_most_similar_sentences(query_sentence, loaded_embeddings, sentences, to
         
     # Get the indices of the top N most similar sentences
     top_indices = np.argsort(similarity_scores)[::-1][:top_n]
-
     # Get the file names, sentences, and similarity scores for the top N most similar sentences for each query sentence
-    top_similar_sentences = []
-    for i in range(len(top_indices)):
-        top_similar_sentences.append((sentences[top_indices[i]][0], sentences[top_indices[i]][1], similarity_scores[top_indices[i]]))
-
+    top_similar_sentences = [(sentences[i][0], sentences[i][1], similarity_scores[i]) for i in top_indices]
     return top_similar_sentences

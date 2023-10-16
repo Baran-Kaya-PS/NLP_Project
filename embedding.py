@@ -8,9 +8,9 @@ model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
 def read_sentences_from_files(path):
     """
     Reads sentences from all .srt, .sub, and .txt files in the given directory and its subdirectories.
-    Returns a list of sentences.
+    Returns a list of (filename, sentence) pairs.
     """
-    sentences = []
+    all_sentences = []  # Renamed to all_sentences to avoid naming conflict
     file_count = 0
     for root, _, files in os.walk(path):
         for file in files:
@@ -21,8 +21,10 @@ def read_sentences_from_files(path):
                 with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                     content = f.read()
                     # Split content into sentences based on common delimiters
-                    sentences.extend(re.split(r'[.!?]', content))
-    return sentences
+                    for sentence in re.split(r'[.!?]', content):
+                        all_sentences.append((file, sentence.strip()))  # Store filename along with the sentence
+    return all_sentences
+
 
 def obtain_embeddings(path):
     """
