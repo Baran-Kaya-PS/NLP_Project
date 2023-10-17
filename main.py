@@ -5,11 +5,7 @@ from embedding import obtain_embeddings, read_sentences_from_files
 from similarity_computation import find_most_similar_sentences
 
 def main():
-    Path = os.path.join(os.getcwd(), 'sous-titres')
-    unzip_files(Path)
-    remove_numbers_from_files(Path)
-    remove_accents_from_files(Path)
-    process_files(Path)
+    print("apagnann")
 
 if __name__ == '__main__':
     main()
