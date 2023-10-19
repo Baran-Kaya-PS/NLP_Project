@@ -187,3 +187,21 @@ def remove_accents_from_files(path):
                 with open(file_path, 'w', encoding='utf-8') as f:
                     f.write(content_without_accents)
                 print(f"Removed accents from {file_path}")
+                
+                
+def main():                
+    Path = os.path.join(os.getcwd(), 'sous-titres')
+
+    # Unzip all files in the directory
+    unzip_files(Path)
+
+    # Process all .srt and .sub files in the directory
+    process_files(Path)
+
+    # Clean all subtitles in the directory
+    clean_subtitles(Path)
+
+    # Remove numbers from all files in the directory
+    remove_numbers_from_files(Path)
+if __name__ == '__main__':
+    main()
