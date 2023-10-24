@@ -1,60 +1,69 @@
-import os
 import json
-import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import linear_kernel
+from sklearn.metrics.pairwise import cosine_similarity
+from translate import Translator
 
+# Charger les données à partir du fichier JSON
+with open('tokenized_data_cleaned.json', 'r', encoding='utf-8') as file:
+    data = json.load(file)
 
-class TFIDFSearch:
+# Regrouper les textes tokenisés par série (comme dans le code précédent)
+series_tokenized_content = {}
+for episode in data:
+    series_name = episode['series_name']
+    tokenized_content = episode['tokenized_content']
+    if series_name not in series_tokenized_content:
+        series_tokenized_content[series_name] = []
+    # Assurez-vous que chaque élément de la liste tokenized_content est une chaîne de caractères
+    tokenized_content = [str(phrase) for phrase in tokenized_content]
+    series_tokenized_content[series_name].extend(tokenized_content)
+    
+# Initialiser le vectoriseur TF-IDF en dehors de la fonction
+tfidf_vectorizer = TfidfVectorizer()
 
-    def __init__(self, load_existing=True):
-        with open(os.path.join(os.getcwd(), 'tokenized_data.json'), 'r', encoding='utf-8') as file:
-            self.data = json.load(file)
+# Fonction pour traduire la requête en anglais
+def translate_to_english(query, source_lang='fr'):
+    translator = Translator(from_lang=source_lang, to_lang="en")
+    translation = translator.translate(query)
+    return translation
 
-        # Préparation des données pour le TF-IDF
-        self.series_contents = [" ".join(series["tokenized_content"]) for series in self.data]
+# Fonction pour trouver les séries les plus similaires à la requête de l'utilisateur
+def get_top_series(query, top_n=5):
+    # Traduire la requête en anglais
+    english_query = translate_to_english(query, source_lang='fr')
 
-        # Initialisation du vectorizer
-        self.vectorizer = TfidfVectorizer(max_df=0.70, min_df=6, ngram_range=(1, 2))
+    # Convertir la requête en vecteur TF-IDF
+    query_vector = tfidf_vectorizer.transform([english_query])
 
-        if load_existing:
-            with open('tfidf_matrix.pkl', 'rb') as f:
-                self.tfidf_matrix = pickle.load(f)
-            with open('vectorizer.pkl', 'rb') as f:
-                self.vectorizer = pickle.load(f)
-        else:
-            self.tfidf_matrix = self.vectorizer.fit_transform(self.series_contents)
-            with open('tfidf_matrix.pkl', 'wb') as f:
-                pickle.dump(self.tfidf_matrix, f)
-            with open('vectorizer.pkl', 'wb') as f:
-                pickle.dump(self.vectorizer, f)
+    # Calculer la similarité cosinus entre la requête et les séries
+    cosine_similarities = cosine_similarity(query_vector, tfidf_matrix).flatten()
 
-    def search(self, query):
-        # Transformation de la requête en vecteur TF-IDF
-        query_vector = self.vectorizer.transform([query])
+    # Trier les indices des séries en fonction de leur similarité avec la requête
+    similar_series_indices = cosine_similarities.argsort()[::-1]
 
-        # Calcul des scores de similarité
-        cosine_similarities = linear_kernel(query_vector, self.tfidf_matrix).flatten()
+    # Utiliser un ensemble pour stocker les séries uniques
+    unique_series = set()
 
-        # Récupération des indices des séries en fonction de leur score de similarité
-        related_series_indices = cosine_similarities.argsort()[:-5:-1]
+    # Récupérer les noms des séries les plus similaires
+    for i in similar_series_indices:
+        series_name = list(series_tokenized_content.keys())[i]
+        # Ajouter la série à l'ensemble si elle n'est pas déjà présente
+        if series_name not in unique_series:
+            unique_series.add(series_name)
+            # Si nous avons trouvé suffisamment de séries uniques, sortir de la boucle
+            if len(unique_series) >= top_n:
+                break
 
-        # Récupération des séries les plus pertinentes
-        results = []
-        for index in related_series_indices:
-            series_name = self.data[index]["series_name"]
-            results.append(series_name)
+    # Renvoyer les noms des séries uniques
+    return list(unique_series)
 
-        return results
+# Convertir les textes par série en vecteurs TF-IDF
+tfidf_matrix = tfidf_vectorizer.fit_transform([" ".join(episodes) for series, episodes in series_tokenized_content.items()])
 
+# Exemple d'utilisation
+user_query = input("Entrez votre requête : ")
+top_series = get_top_series(user_query)
 
-if __name__ == "__main__":
-    searcher = TFIDFSearch(load_existing=False)
-    predefined_queries = ["ile, crash, avion", "drogue", "voiture"]  # Remplacez par vos requêtes prédéfinies
-
-    for query in predefined_queries:
-        results = searcher.search(query)
-        print(f"Results for query '{query}':")
-        for series in results:
-            print(series)
-        print("\n")
+print("Séries les plus similaires à votre requête :")
+for series_name in top_series:
+    print(f"Série : {series_name}")
