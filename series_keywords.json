@@ -1,0 +1,568 @@
+{
+    "24": [
+        "biological weapon",
+        "traitor",
+        "revenge",
+        "los angeles, california",
+        "terrorism",
+        "secret service",
+        "political intrigue ",
+        "assassination of president"
+    ],
+    "90210": [
+        "high school",
+        "friendship",
+        "california",
+        "family relationships",
+        "love",
+        "los angeles, california",
+        "beverly hills",
+        "teenage romance",
+        "teen drama"
+    ],
+    "alias": [
+        "martial arts",
+        "cia",
+        "undercover agent",
+        "espionage",
+        "double agent",
+        "revenge",
+        "los angeles, california",
+        "female spy",
+        "government agent",
+        "criminal organization"
+    ],
+    "angel": [
+        "monster",
+        "vampire",
+        "anti hero",
+        "redemption",
+        "vampire hunter (slayer)",
+        "evil corporation",
+        "spin off",
+        "dark fantasy",
+        "neo-noir",
+        "fighting supernatural",
+        "supernatural power"
+    ],
+    "blade": [
+        "martial arts",
+        "samurai",
+        "supernatural",
+        "based on manga",
+        "historical",
+        "seinen",
+        "anime"
+    ],
+    "bones": [
+        "washington dc, usa",
+        "fbi",
+        "crime lab",
+        "forensic science",
+        "murder investigation",
+        "crime investigation",
+        "forensic archaeology"
+    ],
+    "buffy": [
+        "high school",
+        "monster",
+        "magic",
+        "vampire",
+        "anti hero",
+        "supernatural",
+        "chosen one",
+        "vampire hunter (slayer)",
+        "female protagonist",
+        "apocalypse",
+        "fighting supernatural"
+    ],
+    "californication": [
+        "california",
+        "change",
+        "self-destruction",
+        "addiction",
+        "writer",
+        "willpower"
+    ],
+    "caprica": [
+        "artificial intelligence (a.i.)",
+        "technology",
+        "prequel",
+        "space",
+        "alien planet",
+        "family drama",
+        "robot",
+        "battlestar galactica"
+    ],
+    "charmed": [
+        "witch",
+        "sibling relationship",
+        "magic",
+        "warrior woman",
+        "female protagonist",
+        "demon",
+        "succubus"
+    ],
+    "chuck": [
+        "cia",
+        "genius",
+        "super computer",
+        "nerd",
+        "secret agent",
+        "national security agency (nsa)",
+        "unlikely lovers",
+        "computer in brain",
+        "pretend relationship"
+    ],
+    "coldcase": [
+        "cult",
+        "human sacrifice",
+        "satanic cult"
+    ],
+    "community": [
+        "colorado",
+        "parody",
+        "group of friends",
+        "community college",
+        "sitcom",
+        "adult in college"
+    ],
+    "cupid": [
+        "chicago, illinois",
+        "greek mythology",
+        "psychologist",
+        "cupid"
+    ],
+    "daybreak": [
+        "high school",
+        "post-apocalyptic future",
+        "based on comic",
+        "bully",
+        "los angeles, california"
+    ],
+    "demons": [
+        "based on novel or book",
+        "reincarnation",
+        "chinese",
+        "cultivation",
+        "animation"
+    ],
+    "dexter": [
+        "double life",
+        "based on novel or book",
+        "miami, florida",
+        "vigilante",
+        "serial killer",
+        "psychological thriller",
+        "killer",
+        "murder investigation",
+        "crime investigation",
+        "neo-noir",
+        "police procedural"
+    ],
+    "dirt": [
+        "career woman",
+        "magazine",
+        "hollywood",
+        "tabloid"
+    ],
+    "dollhouse": [
+        "future",
+        "identity",
+        "dystopia",
+        "memory",
+        "evil corporation",
+        "cyberpunk",
+        "psychological thriller",
+        "erased memory",
+        "bring down organization",
+        "body switch"
+    ],
+    "entourage": [
+        "movie business",
+        "male friendship",
+        "celebrity",
+        "womanizer",
+        "money",
+        "wealth",
+        "hollywood",
+        "los angeles, california",
+        "group of friends",
+        "beverly hills",
+        "aspiring actor",
+        "film industry"
+    ],
+    "eureka": [
+        "technology",
+        "genius",
+        "futuristic",
+        "scientist",
+        "hope for future",
+        "invisible barrier",
+        "fringe science"
+    ],
+    "extras": [
+        "satire",
+        "celebrity",
+        "movie star",
+        "aspiring actor",
+        "sitcom"
+    ],
+    "flashforward": [
+        "fbi",
+        "blackout",
+        "future vision"
+    ],
+    "flashpoint": [
+        "canada",
+        "police",
+        "toronto, canada",
+        "task force",
+        "hostage situation"
+    ],
+    "friends": [
+        "new york city",
+        "friendship",
+        "roommate",
+        "cafe",
+        "group of friends",
+        "manhattan, new york city",
+        "sitcom",
+        "new yorker",
+        "young adult",
+        "searching for love",
+        "mid-20s",
+        "apartment",
+        "best friends"
+    ],
+    "fringe": [
+        "fbi",
+        "supernatural",
+        "mad scientist",
+        "alternate dimension",
+        "fringe science"
+    ],
+    "futurama": [
+        "future",
+        "spacecraft",
+        "space travel",
+        "adult humor",
+        "parody",
+        "mad scientist",
+        "alien",
+        "social satire",
+        "distant future",
+        "robot",
+        "adult animation",
+        "delivery service",
+        "alien world",
+        "sitcom"
+    ],
+    "greek": [
+        "college",
+        "ohio",
+        "sorority",
+        "university",
+        "fraternity",
+        "young adult"
+    ],
+    "heroes": [
+        "hero",
+        "villain",
+        "superhuman",
+        "super power"
+    ],
+    "house": [
+        "drug addiction",
+        "medicine",
+        "misanthrophy",
+        "hospital",
+        "doctor",
+        "patient",
+        "medical drama"
+    ],
+    "Invasion": [
+        "alien invasion"
+    ],
+    "jake": [],
+    "jekyll": [
+        "miniseries",
+        "jekyll and hyde",
+        "split personality",
+        "dr. jekyll"
+    ],
+    "jericho": [
+        "small town",
+        "kansas, usa",
+        "survival",
+        "conspiracy",
+        "family drama",
+        "post nuclear",
+        "no electricity",
+        "jericho",
+        "rural",
+        "post-apocalyptic",
+        "rural drama",
+        "community drama"
+    ],
+    "Journeyman": [
+        "time travel",
+        "good deed",
+        "changing the past or future"
+    ],
+    "leverage": [
+        "hacker",
+        "thief",
+        "muscleman",
+        "criminal",
+        "grifter"
+    ],
+    "life": [
+        "framed",
+        "police detective",
+        "ex-con",
+        "lapd"
+    ],
+    "lost": [
+        "island",
+        "airplane crash",
+        "uncharted"
+    ],
+    "madmen": [],
+    "medium": [
+        "medium",
+        "paranormal",
+        "psychic power",
+        "criminal consultant",
+        "phoenix, arizona"
+    ],
+    "mental": [
+        "california",
+        "con man",
+        "cop",
+        "serial killer",
+        "criminal investigation",
+        "forensic psychology",
+        "criminal consultant",
+        "police procedural"
+    ],
+    "merlin": [
+        "magic",
+        "camelot",
+        "royal family",
+        "knight",
+        "king arthur",
+        "dragon",
+        "super power",
+        "middle ages",
+        "fantasy world",
+        "wizard",
+        "based on myths, legends or folklore",
+        "merlin"
+    ],
+    "moonlight": [
+        "california",
+        "vampire",
+        "private investigator",
+        "interspecies romance"
+    ],
+    "nas": [],
+    "niptuck": [
+        "miami, florida",
+        "plastic surgery",
+        "partnership",
+        "family relationships",
+        "womanizer",
+        "plastic surgeon",
+        "narcissism",
+        "medical drama"
+    ],
+    "primeval": [
+        "monster",
+        "dinosaur",
+        "time portal",
+        "anomaly",
+        "jurassic"
+    ],
+    "psych": [
+        "california",
+        "police",
+        "detective",
+        "con man",
+        "psychic power",
+        "interracial friendship",
+        "detective agency",
+        "criminal consultant",
+        "police procedural"
+    ],
+    "raines": [
+        "hallucination",
+        "police detective",
+        "lapd"
+    ],
+    "reaper": [
+        "seattle, washington",
+        "supernatural",
+        "satan",
+        "grim reaper",
+        "devil",
+        "young adult"
+    ],
+    "robinhood": [],
+    "rome": [
+        "rome, italy",
+        "roman empire",
+        "ancient rome",
+        "betrayal",
+        "soldier",
+        "rise to power",
+        "historical drama",
+        "1st century",
+        "brutal violence",
+        "political rival"
+    ],
+    "sanctuary": [
+        "future",
+        "mutant",
+        "superhuman",
+        "scientist",
+        "recruiting"
+    ],
+    "scrubs": [
+        "friendship",
+        "hospital",
+        "doctor",
+        "medical student",
+        "mental hospital",
+        "sitcom",
+        "dramedy",
+        "medical drama",
+        "workplace comedy"
+    ],
+    "skins": [
+        "england",
+        "drugs",
+        "teenage sexuality",
+        "teenage romance",
+        "teen drama"
+    ],
+    "smallville": [
+        "superhero",
+        "kansas, usa",
+        "based on comic",
+        "alien",
+        "super power",
+        "origin story"
+    ],
+    "southpark": [
+        "adult humor",
+        "colorado",
+        "satire",
+        "parody",
+        "elementary school",
+        "social satire",
+        "best friend",
+        "group of friends",
+        "adult animation",
+        "censorship"
+    ],
+    "spaced": [
+        "london, england",
+        "england",
+        "roommate",
+        "rave",
+        "surreal",
+        "rave culture",
+        "raver",
+        "sitcom",
+        "flatmates"
+    ],
+    "stargateuniverse": [
+        "future",
+        "spacecraft",
+        "starship",
+        "technology",
+        "space travel",
+        "alien",
+        "futuristic",
+        "survival",
+        "alien planet",
+        "universe",
+        "lost in space",
+        "social conflict",
+        "cosmos",
+        "distant  planet"
+    ],
+    "supernatural": [
+        "monster",
+        "angel",
+        "supernatural",
+        "exorcism",
+        "paranormal phenomena",
+        "paranormal",
+        "apocalypse",
+        "demon",
+        "on the road",
+        "demonic possession",
+        "ghost",
+        "demon hunter",
+        "fighting evil",
+        "brothers",
+        "horror"
+    ],
+    "swingtown": [
+        "chicago, illinois",
+        "1970s",
+        "neighbor",
+        "period drama",
+        "sexual liberation",
+        "complicated relationships"
+    ],
+    "torchwood": [
+        "supernatural",
+        "time travel",
+        "alien",
+        "paranormal investigation",
+        "spin off"
+    ],
+    "traveler": [
+        "new york city",
+        "man hunt",
+        "framed",
+        "framed for a crime",
+        "prime suspect",
+        "bomb threat"
+    ],
+    "weeds": [
+        "drug dealer",
+        "dark comedy",
+        "dysfunctional family",
+        "outlaw",
+        "marijuana",
+        "single mother",
+        "drugs",
+        "fast food",
+        "family conflicts",
+        "daily drama"
+    ],
+    "whitechapel": [
+        "jack the ripper",
+        "murder investigation",
+        "east end of london",
+        "copycat killer",
+        "whitechapel"
+    ],
+    "xfiles": [
+        "fbi",
+        "investigation",
+        "supernatural",
+        "paranormal phenomena",
+        "alien",
+        "ufo",
+        "conspiracy",
+        "paranormal investigation",
+        "phenomenon",
+        "american folklore",
+        "supernatural power"
+    ]
+}
