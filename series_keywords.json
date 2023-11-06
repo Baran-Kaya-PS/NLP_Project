@@ -45,6 +45,35 @@
         "fighting supernatural",
         "supernatural power"
     ],
+    "battlestargalactica": [
+        "spacecraft",
+        "artificial intelligence (a.i.)",
+        "cyborg",
+        "space travel",
+        "invasion",
+        "space",
+        "alien planet",
+        "space opera",
+        "cybernetic"
+    ],
+    "betteroffted": [
+        "breaking the fourth wall by talking to the audience",
+        "workplace romance",
+        "scientific research",
+        "corporation",
+        "science"
+    ],
+    "bionicwoman": [
+        "cyborg sci fi",
+        "bionics",
+        "cyborg",
+        "superhero",
+        "superheroine",
+        "close up of ear",
+        "supernatural power",
+        "spy",
+        "teacher"
+    ],
     "blade": [
         "martial arts",
         "samurai",
@@ -54,6 +83,13 @@
         "seinen",
         "anime"
     ],
+    "bloodties": [
+        "based on novel or book",
+        "vampire",
+        "romance",
+        "private investigator",
+        "vampirism"
+    ],
     "bones": [
         "washington dc, usa",
         "fbi",
@@ -62,6 +98,19 @@
         "murder investigation",
         "crime investigation",
         "forensic archaeology"
+    ],
+    "breakingbad": [
+        "cancer",
+        "chemistry",
+        "methamphetamine",
+        "drug trade",
+        "drug",
+        "albuquerque new mexico",
+        "crystal meth",
+        "meth lab",
+        "chemistry teacher",
+        "anti hero",
+        "friendship"
     ],
     "buffy": [
         "high school",
@@ -75,6 +124,17 @@
         "female protagonist",
         "apocalypse",
         "fighting supernatural"
+    ],
+    "burnnotice": [
+        "narrated by character",
+        "spy",
+        "yogurt",
+        "ex boyfriend ex girlfriend relationship",
+        "florida",
+        "ex cia agent",
+        "blacklist",
+        "holster",
+        "spy action"
     ],
     "californication": [
         "california",
@@ -127,6 +187,17 @@
         "sitcom",
         "adult in college"
     ],
+    "criminalminds": [
+        "murder",
+        "serial killer",
+        "serial murder",
+        "solving crime",
+        "violence",
+        "bloody violence",
+        "police investigation",
+        "fbi agent",
+        "police"
+    ],
     "cupid": [
         "chicago, illinois",
         "greek mythology",
@@ -147,6 +218,14 @@
         "cultivation",
         "animation"
     ],
+    "desperatehousewives": [
+        "housewife",
+        "female friendship",
+        "neighbor",
+        "neighborhood",
+        "infidelity",
+        "conflict of interest"
+    ],
     "dexter": [
         "double life",
         "based on novel or book",
@@ -166,6 +245,23 @@
         "hollywood",
         "tabloid"
     ],
+    "dirtysexymoney": [
+        "new york city",
+        "lawyer",
+        "wealthy"
+    ],
+    "doctorwho": [
+        "time travel",
+        "time machine",
+        "alien",
+        "space travel",
+        "tardis",
+        "companion",
+        "police box",
+        "telephone box",
+        "alien friendship",
+        "human alien"
+    ],
     "dollhouse": [
         "future",
         "identity",
@@ -177,6 +273,16 @@
         "erased memory",
         "bring down organization",
         "body switch"
+    ],
+    "eleventhhour": [
+        "fbi",
+        "environmental hazard",
+        "scientist",
+        "procedural",
+        "criminal consultant",
+        "terrorist",
+        "deduction",
+        "murder"
     ],
     "entourage": [
         "movie business",
@@ -208,6 +314,12 @@
         "aspiring actor",
         "sitcom"
     ],
+    "fearitself": [
+        "fear",
+        "terror",
+        "anthology",
+        "suspense"
+    ],
     "flashforward": [
         "fbi",
         "blackout",
@@ -220,6 +332,26 @@
         "task force",
         "hostage situation"
     ],
+    "flightoftheconchords": [
+        "new york city",
+        "aspiring singer",
+        "folk",
+        "new zealand",
+        "deadpan",
+        "song",
+        "singer",
+        "rock music",
+        "musician"
+    ],
+    "fridaynightlights": [
+        "high school",
+        "sports",
+        "southern usa",
+        "american football",
+        "texas",
+        "teen drama",
+        "coach"
+    ],
     "friends": [
         "new york city",
         "friendship",
@@ -231,7 +363,6 @@
         "new yorker",
         "young adult",
         "searching for love",
-        "mid-20s",
         "apartment",
         "best friends"
     ],
@@ -258,6 +389,43 @@
         "alien world",
         "sitcom"
     ],
+    "garyunmarried": [
+        "dating",
+        "divorce",
+        "divorced parents",
+        "sitcom",
+        "divorced couple"
+    ],
+    "ghostwhisperer": [
+        "supernatural",
+        "ghost",
+        "paranormal phenomena",
+        "paranormal",
+        "psychic power",
+        "ghost hunter",
+        "ghosts",
+        "medium",
+        "psychic",
+        "afterlife",
+        "spirit",
+        "spiritualism",
+        "spiritualist",
+        "spiritual gift",
+        "spiritual power",
+        "talking to the dead"
+    ],
+    "gossipgirl": [
+        "new york city",
+        "based on novel or book",
+        "upper class",
+        "private school",
+        "bullying",
+        "growing up",
+        "class differences",
+        "teen romance",
+        "teen drama",
+        "based on young adult novel"
+    ],
     "greek": [
         "college",
         "ohio",
@@ -265,6 +433,16 @@
         "university",
         "fraternity",
         "young adult"
+    ],
+    "greysanatomy": [
+        "seattle, washington",
+        "trauma",
+        "workplace",
+        "hospital",
+        "doctor",
+        "medical student",
+        "surgical interns",
+        "medical drama"
     ],
     "heroes": [
         "hero",
@@ -281,10 +459,30 @@
         "patient",
         "medical drama"
     ],
+    "howimetyourmother": [
+        "self-discovery",
+        "roommate",
+        "group of friends",
+        "sitcom",
+        "searching for love"
+    ],
+    "intreatment": [
+        "patient",
+        "psychotherapy",
+        "multiple story line",
+        "home office",
+        "psychotherapist",
+        "mental health professional",
+        "emotional breakdown"
+    ],
     "Invasion": [
         "alien invasion"
     ],
-    "jake": [],
+    "jake": [
+        "new york city",
+        "lawyer",
+        "wealthy"
+    ],
     "jekyll": [
         "miniseries",
         "jekyll and hyde",
@@ -305,10 +503,43 @@
         "rural drama",
         "community drama"
     ],
+    "johnfromcincinnati": [
+        "surfing",
+        "california",
+        "family relationships",
+        "surf",
+        "surfing family",
+        "dysfunctional family"
+    ],
     "Journeyman": [
         "time travel",
         "good deed",
         "changing the past or future"
+    ],
+    "knightrider": [
+        "car",
+        "vigilante",
+        "knight rider",
+        "talking car",
+        "car driving itself",
+        "gadget car"
+    ],
+    "kylexy": [
+        "experiment",
+        "seattle, washington",
+        "genius",
+        "secret organization",
+        "superhuman",
+        "fish out of water",
+        "family drama"
+    ],
+    "legendoftheseeker": [
+        "based on novel or book",
+        "magic",
+        "sword fight",
+        "fantasy world",
+        "wizard",
+        "sword and sorcery"
     ],
     "leverage": [
         "hacker",
@@ -316,6 +547,15 @@
         "muscleman",
         "criminal",
         "grifter"
+    ],
+    "lietome": [
+        "lie",
+        "deception",
+        "criminal investigation",
+        "lie detection",
+        "forensic psychology",
+        "criminal consultant",
+        "police procedural"
     ],
     "life": [
         "framed",
@@ -328,13 +568,33 @@
         "airplane crash",
         "uncharted"
     ],
-    "madmen": [],
+    "madmen": [
+        "work",
+        "workplace",
+        "advertising",
+        "advertising agency",
+        "executive",
+        "madison avenue",
+        "1960s"
+    ],
+    "mastersofscifi": [
+        "science fiction",
+        "anthology",
+        "based on short story",
+        "tv mini-series"
+    ],
     "medium": [
         "medium",
         "paranormal",
         "psychic power",
         "criminal consultant",
         "phoenix, arizona"
+    ],
+    "melroseplace": [ 
+        "california",
+        "neighbor",
+        "apartment complex",
+        "beverly hills"
     ],
     "mental": [
         "california",
@@ -366,16 +626,47 @@
         "private investigator",
         "interspecies romance"
     ],
-    "nas": [],
+    "mynameisearl": [
+        "white trash",
+        "good deed",
+        "karma",
+        "sitcom"
+    ],
+    "nas": [
+    ],
+    "ncislosangeles": [
+        "navy",
+        "undercover",
+        "los angeles, california",
+        "spin off",
+        "u.s. marine",
+        "military",
+        "crime investigation"
+    ],
     "niptuck": [
         "miami, florida",
+        "narcissism",
         "plastic surgery",
         "partnership",
         "family relationships",
         "womanizer",
         "plastic surgeon",
-        "narcissism",
         "medical drama"
+    ],
+    "onetreehill": [
+        "high school",
+        "sibling relationship",
+        "basketball",
+        "teenage romance",
+        "teen drama"
+    ],
+    "painkillerjane": [
+        "immortality",
+        "superhero",
+        "based on comic",
+        "secret government organization",
+        "superhuman",
+        "supernatural power"
     ],
     "primeval": [
         "monster",
@@ -383,6 +674,23 @@
         "time portal",
         "anomaly",
         "jurassic"
+    ],
+    "prisonbreak": [
+        "prison",
+        "prisoner",
+        "escape",
+        "brother",
+        "fugitive",
+        "conspiracy",
+        "wrongful imprisonment",
+        "ex-con",
+        "escaped prisoner",
+        "effects from the past"
+    ],
+    "privatepractice": [
+        "doctor",
+        "spin-off",
+        "medical drama"
     ],
     "psych": [
         "california",
@@ -394,6 +702,16 @@
         "detective agency",
         "criminal consultant",
         "police procedural"
+    ],
+    "pushingdaisies": [
+        "dark comedy",
+        "surrealism",
+        "reanimation",
+        "magic realism",
+        "murder investigation",
+        "resuscitation power",
+        "rekindled romance",
+        "supernatural power"
     ],
     "raines": [
         "hallucination",
@@ -408,7 +726,12 @@
         "devil",
         "young adult"
     ],
-    "robinhood": [],
+    "robinhood": [
+        "england",
+        "robin hood",
+        "vigilante",
+        "middle ages"
+    ],
     "rome": [
         "rome, italy",
         "roman empire",
@@ -420,6 +743,10 @@
         "1st century",
         "brutal violence",
         "political rival"
+    ],
+    "samanthawho": [
+        "memory loss",
+        "good deed"
     ],
     "sanctuary": [
         "future",
@@ -439,6 +766,32 @@
         "medical drama",
         "workplace comedy"
     ],
+    "sexandthecity": [
+        "new york city",
+        "beauty",
+        "female friendship",
+        "love",
+        "dating",
+        "newspaper reporter",
+        "manhattan, new york city",
+        "sitcom"
+    ],
+    "sixfeetunder": [
+        "sibling relationship",
+        "widow",
+        "dark comedy",
+        "family business",
+        "death of father",
+        "dysfunctional family",
+        "business",
+        "family drama",
+        "los angeles, california",
+        "family",
+        "death",
+        "funeral home",
+        "mortuary",
+        "gay theme"
+    ],
     "skins": [
         "england",
         "drugs",
@@ -453,6 +806,12 @@
         "alien",
         "super power",
         "origin story"
+    ],
+    "sonsofanarchy": [
+        "outlaw",
+        "organized crime",
+        "motorcycle gang",
+        "criminal"
     ],
     "southpark": [
         "adult humor",
@@ -476,6 +835,31 @@
         "raver",
         "sitcom",
         "flatmates"
+    ],
+    "stargateatlantis": [
+        "galaxy",
+        "future",
+        "spacecraft",
+        "technology",
+        "atlantis",
+        "space travel",
+        "alien",
+        "alien planet",
+        "lost city",
+        "alien race",
+        "lost civilization",
+        "warrior race",
+        "distant planet"
+    ],
+    "stargatesgl": [
+        "space travel",
+        "alien",
+        "space",
+        "travel",
+        "alien planet",
+        "military",
+        "distant planet",
+        "secret military program"
     ],
     "stargateuniverse": [
         "future",
@@ -518,6 +902,169 @@
         "sexual liberation",
         "complicated relationships"
     ],
+    "the4400": [
+        "washington dc, usa",
+        "paranormal phenomena",
+        "time travel",
+        "superhuman",
+        "missing person"
+    ],
+    "thebigbangtheory": [
+        "nerd",
+        "geek",
+        "friends",
+        "scientist",
+        "sitcom"
+    ],
+    "theblackdonnellys": [
+        "new york city",
+        "sibling relationship",
+        "irish-american",
+        "organized crime"
+    ],
+    "thekillpoint": [
+        "heist",
+        "thief",
+        "bank robbery",
+        "hostage situation",
+        "ex soldier"
+    ],
+    "thelostroom": [
+        "hotel room",
+        "teleportation",
+        "time travel",
+        "alternate dimension",
+        "miniseries",
+        "super power",
+        "missing child"
+    ],
+    "thementalist": [
+        "california",
+        "con man",
+        "cop",
+        "serial killer",
+        "criminal investigation",
+        "forensic psychology",
+        "criminal consultant",
+        "police procedural"
+    ],
+    "thenine": [
+        "flashback",
+        "los angeles, california",
+        "hostage situation",
+        "bank robbery" 
+    ],
+    "theoc": [
+        "california",
+        "troubled teen",
+        "unlikely lovers",
+        "teenage romance",
+        "teen drama"
+    ],
+    "thepretender": [
+        "undercover",
+        "anti hero",
+        "genius",
+        "investigation",
+        "conspiracy",
+        "evil corporation",
+        "impostor",
+        "justice",
+        "boy genius",
+        "manhunt",
+        "prodigy"
+    ],
+    "theriches": [
+        "con man",
+        "dysfunctional family",
+        "outlaw",
+        "impostor"
+    ],
+    "thesarahconnorchronicles": [
+        "cyborg",
+        "time travel",
+        "dysfunctional family",
+        "flash forward",
+        "robot",
+        "based on movie",
+        "evil robot"
+    ],
+    "theshield": [
+        "drug dealer",
+        "police corruption",
+        "los angeles, california",
+        "police brutality",
+        "gang",
+        "dirty cop",
+        "drugs",
+        "police detective",
+        "death",
+        "criminal investigation",
+        "lapd",
+        "mexican cartel",
+        "brutal violence"
+    ],
+    "esopranos": [
+        "drug dealer",
+        "new jersey",
+        "italian american",
+        "mafia boss",
+        "dysfunctional family",
+        "strip club",
+        "family relationships",
+        "dysfunctional marriage",
+        "mobster",
+        "organized crime",
+        "mafia",
+        "psychiatrist",
+        "family",
+        "criminal organization"
+    ],
+    "thetudors": [
+        "england",
+        "royal family",
+        "monarchy",
+        "tudor",
+        "16th century",
+        "historical drama",
+        "anne boleyn",
+        "king of england",
+        "henry viii",
+        "palace intrigue"
+    ],
+    "thevampirediaries": [
+        "witch",
+        "based on novel or book",
+        "love triangle",
+        "vampire",
+        "supernatural",
+        "eternal youth",
+        "werewolf",
+        "supernatural creature",
+        "doppelgänger",
+        "eternal love",
+        "interspecies romance",
+        "based on young adult novel"
+    ],
+    "thewire": [
+        "drug dealer",
+        "baltimore, usa",
+        "newspaper",
+        "police",
+        "corruption",
+        "gangster",
+        "organized crime",
+        "police detective",
+        "surveillance",
+        "power politics",
+        "urban decay",
+        "newspaper reporter",
+        "workers union",
+        "education system",
+        "docks",
+        "black project",
+        "violence"
+    ],
     "torchwood": [
         "supernatural",
         "time travel",
@@ -532,6 +1079,37 @@
         "framed for a crime",
         "prime suspect",
         "bomb threat"
+    ],
+    "trucalling": [
+        "morgue",
+        "psychic power"
+    ],
+    "trueblood": [
+        "based on novel or book",
+        "vampire",
+        "fairy",
+        "undead",
+        "werewolf",
+        "ghost",
+        "dark fantasy",
+        "erotic thriller",
+        "interspecies romance"
+    ],
+    "uglybetty": [
+        "new york city",
+        "workplace",
+        "fashion",
+        "mexican american",
+        "fashion magazine",
+        "sitcom"
+    ],
+    "veromcamars": [
+        "high school",
+        "detective",
+        "private investigator",
+        "teenage romance",
+        "neo-noir",
+        "female private detective"
     ],
     "weeds": [
         "drug dealer",
@@ -551,6 +1129,12 @@
         "east end of london",
         "copycat killer",
         "whitechapel"
+    ],
+    "womensmurderclub": [
+        "san francisco, california",
+        "female relationship",
+        "female detective",
+        "murder investigation"
     ],
     "xfiles": [
         "fbi",
