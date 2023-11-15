@@ -21,6 +21,9 @@ for episode in data:
 # Initialiser le vectoriseur TF-IDF en dehors de la fonction
 tfidf_vectorizer = TfidfVectorizer()
 
+# Convertir les textes par série en vecteurs TF-IDF
+tfidf_matrix = tfidf_vectorizer.fit_transform([" ".join(episodes) for series, episodes in series_tokenized_content.items()])
+
 # Fonction pour traduire la requête en anglais
 def translate_to_english(query, source_lang='fr'):
     translator = Translator(from_lang=source_lang, to_lang="en")
@@ -56,9 +59,6 @@ def get_top_series(query, top_n=5):
 
     # Renvoyer les noms des séries uniques
     return list(unique_series)
-
-# Convertir les textes par série en vecteurs TF-IDF
-tfidf_matrix = tfidf_vectorizer.fit_transform([" ".join(episodes) for series, episodes in series_tokenized_content.items()])
 
 # Exemple d'utilisation
 user_query = input("Entrez votre requête : ")
