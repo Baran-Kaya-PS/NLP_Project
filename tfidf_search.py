@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from translate import Translator
 
 # Charger les données à partir du fichier JSON
-with open('tokenized_data_cleaned.json', 'r', encoding='utf-8') as file:
+with open('C:/Users/tetex/Documents/BUT3 S5/SAE/pythonProject2-master/pythonProject2-master/data_tokenized.json', 'r', encoding='utf-8') as file: # Changer selon le chemin du fichier
     data = json.load(file)
 
 # Regrouper les textes tokenisés par série (comme dans le code précédent)
@@ -47,15 +47,16 @@ def get_top_series(query, top_n=5):
     # Utiliser un ensemble pour stocker les séries uniques
     unique_series = set()
 
-    # Récupérer les noms des séries les plus similaires
-    for i in similar_series_indices:
+    # Afficher le classement et les valeurs de similarité
+    print("Classement du top 5 séries similaires:")
+    for rank, i in enumerate(similar_series_indices[:top_n]):
         series_name = list(series_tokenized_content.keys())[i]
+        similarity_value = round(cosine_similarities[i], 5)
+        print(f"{rank + 1}. Série : {series_name}, Similarité : {similarity_value}")
+
         # Ajouter la série à l'ensemble si elle n'est pas déjà présente
         if series_name not in unique_series:
             unique_series.add(series_name)
-            # Si nous avons trouvé suffisamment de séries uniques, sortir de la boucle
-            if len(unique_series) >= top_n:
-                break
 
     # Renvoyer les noms des séries uniques
     return list(unique_series)
@@ -63,7 +64,3 @@ def get_top_series(query, top_n=5):
 # Exemple d'utilisation
 user_query = input("Entrez votre requête : ")
 top_series = get_top_series(user_query)
-
-print("Séries les plus similaires à votre requête :")
-for series_name in top_series:
-    print(f"Série : {series_name}")
