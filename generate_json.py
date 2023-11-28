@@ -104,3 +104,4 @@ def structure_data_to_json(root_path):
 if __name__ == "__main__":
     root_path = os.path.join(os.getcwd(), 'sous-titres')
     structure_data_to_json(root_path)
+    
