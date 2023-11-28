@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from translate import Translator
 
 # Charger les données à partir du fichier JSON
-with open('C:/Users/tetex/Documents/BUT3 S5/SAE/pythonProject2-master/pythonProject2-master/data_tokenized.json', 'r', encoding='utf-8') as file: # Changer selon le chemin du fichier
+with open('tokenized_data_cleaned.json.', 'r', encoding='utf-8') as file: # Changer selon le chemin du fichier
     data = json.load(file)
 
 # Regrouper les textes tokenisés par série (comme dans le code précédent)
@@ -23,6 +23,11 @@ tfidf_vectorizer = TfidfVectorizer()
 
 # Convertir les textes par série en vecteurs TF-IDF
 tfidf_matrix = tfidf_vectorizer.fit_transform([" ".join(episodes) for series, episodes in series_tokenized_content.items()])
+
+# Convertir la matrice sparse en une matrice dense et la sauvegarder
+with open('tfidf_matrix.json', 'w', encoding='utf-8') as file:
+    tfidf_matrix_data = {'tfidf_matrix': tfidf_matrix.todense().tolist(), 'series_tokenized_content': series_tokenized_content}
+    json.dump(tfidf_matrix_data, file)
 
 # Fonction pour traduire la requête en anglais
 def translate_to_english(query, source_lang='fr'):
