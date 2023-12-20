@@ -2,13 +2,19 @@ import os
 import zipfile
 import re
 import nltk
-from nltk.corpus import stopwords
+import unicodedata
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize, sent_tokenize
 from unidecode import unidecode
+import json
 
+with open('stop_words_english.json', 'r', encoding='utf-8') as f:
+    stop_words_english = json.load(f)
 
+with open('stop_words_french.json', 'r', encoding='utf-8') as f:
+    stop_words_french = json.load(f)
 
+stop_words = set(stop_words_english + stop_words_french)
 def unzip_files(path):
     """
     Unzips all .zip files in the given directory and its subdirectories.
@@ -39,13 +45,12 @@ def process_files(path):
 
 
 lemmatizer = WordNetLemmatizer()
-stop_words = set(stopwords.words(['english', 'french']))
 
 
 def clean_subtitles(file_path):
     """
-    Cleans the subtitles in the given file by removing non-alphanumeric characters,
-    stopwords, and lemmatizing the words.
+    Cleans the subtitles in the given file by removing non-alphanumeric characters
+    (except for accents) and stopwords.
     """
     try:
         with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
@@ -54,16 +59,20 @@ def clean_subtitles(file_path):
         print(f"Skipping {file_path} due to a permission error.")
         return
 
-    # Remove non-alphanumeric characters
-    content = re.sub(r'\W+', ' ', content)
-    
-    # Remove the specified patterns
-    content = re.sub(r'^\d+\s*$', '', content)  # Removes lines containing only digits
-    content = re.sub(r'{\d+}{\d+}', '', content)  # Removes lines containing {digits}{digits}
+    # Remove non-alphanumeric characters except for accents and spaces
+    content = re.sub(r'[^\w\séèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ]', '', content)
 
-    # Tokenize, remove stopwords, and lemmatize
-    words = word_tokenize(content)
-    words = [lemmatizer.lemmatize(word) for word in words if word.lower() not in stop_words]
+    # Remove lines containing only digits
+    content = re.sub(r'^\d+\s*$', '', content, flags=re.MULTILINE)
+
+    # Removes lines containing {digits}{digits}
+    content = re.sub(r'{\d+}{\d+}', '', content)
+
+    # Tokenize by splitting on whitespace
+    words = content.split()
+
+    # Remove stopwords
+    words = [word for word in words if word.lower() not in stop_words]
 
     # Join the cleaned words back into a string
     cleaned_content = ' '.join(words)
@@ -75,6 +84,7 @@ def clean_subtitles(file_path):
     except PermissionError:
         print(f"Skipping {file_path} due to a permission error.")
         return
+
 
 
 def process_files(path):
@@ -158,17 +168,13 @@ def remove_numbers_from_files(path):
 def tokenize_text(text):
     # Sentence tokenization
     sentences = sent_tokenize(text)
-
     # Word tokenization, removing punctuation, and lowercasing
     tokenized_sentences = [word_tokenize(sentence) for sentence in sentences]
     tokenized_sentences = [[word.lower() for word in sentence if word.isalpha()] for sentence in tokenized_sentences]
-
-    # Removing stop words (optional)
-    stop_words = set(stopwords.words('english'))  # Change 'english' to your desired language if needed
-    tokenized_sentences = [[word for word in sentence if word not in stop_words] for sentence in tokenized_sentences]
-
     return tokenized_sentences
-
+def remove_accents(input_str):
+    nfkd_form = unicodedata.normalize('NFKD', input_str)
+    return "".join([c for c in nfkd_form if not unicodedata.combining(c)])
 
 def remove_accents_from_files(path):
     """
@@ -182,14 +188,16 @@ def remove_accents_from_files(path):
                 with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                     content = f.read()
 
-                content_without_accents = unidecode(content)
+                # Applique la fonction remove_accents pour enlever les accents
+                content_without_accents = remove_accents(content)
 
                 with open(file_path, 'w', encoding='utf-8') as f:
                     f.write(content_without_accents)
                 print(f"Removed accents from {file_path}")
-                
-                
-def main():                
+
+if __name__ == '__main__':
+    path = r'chemin_vers_vos_fichiers'
+def main():
     Path = os.path.join(os.getcwd(), 'sous-titres')
 
     # Unzip all files in the directory
