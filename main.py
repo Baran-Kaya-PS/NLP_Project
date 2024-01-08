@@ -1,11 +1,14 @@
-import numpy as np
-import os 
-from Cleaner import unzip_files, process_files, clean_subtitles, unzip_single_file, remove_numbers_from_files,remove_accents_from_files
-from embedding import obtain_embeddings, read_sentences_from_files
-from similarity_computation import find_most_similar_sentences
+import Cleaner_obj
+import generate_json_obj
+import tokenizer_obj
+import matrix_gen_obj
 
-def main():
-    print("apagnann")
+def main(): # Modifier le nom des fichiers si c'est pas les bon noms
 
-if __name__ == '__main__':
+    Cleaner_obj.main()
+    generate_json_obj.main()
+    tokenizer_obj.main()
+    matrix_gen_obj.main()
+    
+if __name__ == "__main__":
     main()
