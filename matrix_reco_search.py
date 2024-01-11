@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from translate import Translator
 
 # Fonction pour charger la matrice TF-IDF depuis le fichier JSON
-def load_tfidf_matrix(file_path='tfidf_matrix.json'):
+def load_tfidf_matrix(file_path='tfidf_matrixtest.json'):
     with open(file_path, 'r', encoding='utf-8') as file:
         tfidf_matrix_json = json.load(file)
 
@@ -78,13 +78,18 @@ def recommandation(watched_series, keywords_file='series_keywords.json'):
                 similarity = result['similarity']
 
                 # Mettre à jour le dictionnaire avec la plus grande similarité pour chaque série
-                if series_name not in recommendation_results or similarity > recommendation_results[series_name]:
+                # Ne pas ajouter la série si elle a déjà été regardée
+                if series_name not in watched_series and (series_name not in recommendation_results or similarity > recommendation_results[series_name]):
                     recommendation_results[series_name] = similarity
 
     # Trier le dictionnaire par similarité décroissante
     sorted_results = sorted(recommendation_results.items(), key=lambda x: x[1], reverse=True)
 
     return sorted_results
+
+# Fonction pour revoir les séries déjà regardées
+def review_watched_series(watched_series):
+    return watched_series
 
 # Initialiser le vectoriseur TF-IDF en dehors de la fonction
 tfidf_vectorizer = TfidfVectorizer()
@@ -96,7 +101,7 @@ tfidf_matrix_json = load_tfidf_matrix()
 watched_series = []
 
 while True:
-    user_action = input("Que voulez-vous faire? (recherche/recommandations/quitter): ").lower()
+    user_action = input("Que voulez-vous faire? (recherche/recommandations/revoir/quitter): ").lower()
 
     if user_action == 'quitter':
         break
@@ -125,6 +130,12 @@ while True:
         print("Recommandations de séries similaires basées sur les mots-clés des séries regardées:")
         for series, similarity in recommendations:
             print(f"Série : {series}, Similarité : {similarity}")
+            
+    elif user_action == 'revoir':
+        watched_series_review = review_watched_series(watched_series)
+        print("Séries déjà regardées :")
+        for series in watched_series_review:
+            print(series)
 
     else:
-        print("Action non reconnue. Veuillez entrer 'recherche', 'recommandations' ou 'quitter'.")
+        print("Action non reconnue. Veuillez entrer 'recherche', 'recommandations', 'revoir' ou 'quitter'.")
