@@ -5,9 +5,10 @@ from unidecode import unidecode
 
 class Cleaner:
     def __init__(self, path):
-        self.path = path
+        self.path = path  # Initialisation du chemin vers les fichiers
 
     def unzip_files(self):
+        # Parcourt tous les fichiers .zip dans le chemin donné et les dézzippe
         for root, dirs, files in os.walk(self.path):
             for file in files:
                 if file.endswith('.zip'):
@@ -22,6 +23,7 @@ class Cleaner:
                         print(f"Error processing {file_path}: {e}")
 
     def clean_subtitles(self, file_path):
+        # Nettoie les fichiers de sous-titres en supprimant les caractères non souhaitées (alphanumériques et les nombres)
         try:
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
                 content = file.read()
@@ -41,6 +43,7 @@ class Cleaner:
             return
 
     def process_files(self):
+        # Parcourt et nettoie tous les fichiers .srt et .sub
         for root, dirs, files in os.walk(self.path):
             for file in files:
                 if file.endswith('.srt') or file.endswith('.sub'):
@@ -49,6 +52,7 @@ class Cleaner:
                     print(f"Processed {file_path}")
 
     def remove_numbers_from_files(self):
+        # Supprime les chiffres des fichiers spécifiés
         processed_files = 0
         total_files = sum([len(files) for _, _, files in os.walk(self.path)])
         print(f"Found {total_files} files in the directory.")
@@ -72,6 +76,7 @@ class Cleaner:
         print(f"Finished processing {processed_files} out of {total_files} files.")
 
     def remove_accents_from_files(self):
+        # Supprime les accents des fichiers .srt, .sub, .txt
         for root, _, files in os.walk(self.path):
             for file in files:
                 file_ext = os.path.splitext(file)[1]
@@ -89,6 +94,7 @@ class Cleaner:
                     print(f"Removed accents from {file_path}")
 
     def execute(self):
+        # Exécute toutes les étapes de nettoyage
         self.unzip_files()
         self.remove_accents_from_files()
         self.process_files()
