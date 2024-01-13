@@ -3,6 +3,7 @@ import re
 import json
 
 class JSONGenerator:
+    # Motifs réguliers des épisodes et des séries
     patterns = [
         r'(S\d{1,2}E\d{1,2})',
         r'(\d{1}x\d{2})',
@@ -23,6 +24,7 @@ class JSONGenerator:
         r'(0307)'
     ]
 
+    # Liste des noms de séries à reconnaître
     nomSerie = ["24", "90210", "alias", "angel", "battlestargalactica", "betteroffted", "bionicwoman", "blade", "bloodties",
             "bones", "breakingbad", "buffy", "burnnotice", "californication", "caprica", "charmed", "chuck", "coldcase",
             "community", "criminalminds", "cupid", "daybreak", "demons", "desperatehousewives", "dexter", "dirt",
@@ -44,15 +46,15 @@ class JSONGenerator:
     def __init__(self, root_path):
         self.root_path = root_path
 
-    # Fonction pour extraire le nom de la série à partir du nom du fichier
     def extract_series_name(self, filename):
+        # Extrait le nom de la série du nom de fichier
         for serie in self.nomSerie:
             if serie.lower() in filename.lower():
                 return serie
         return None
 
-    # Fonction pour extraire le numéro de saison et d'épisode à partir du nom du fichier
     def extract_season_episode(self, filename):
+        # Extrait le numéro de saison et d'épisode du nom de fichier
         for pattern in self.patterns:
             match = re.search(pattern, filename, re.IGNORECASE)
             if match:
@@ -61,16 +63,16 @@ class JSONGenerator:
                     return int(numbers[0]), int(numbers[1])
         return None, None
 
-    # Fonction pour extraire la langue à partir du nom du fichier
     def extract_language(self, filename):
+        # Déduit la langue du fichier à partir de son nom
         if re.search(r'\bVF\b', filename, re.IGNORECASE):
             return "French"
         elif re.search(r'\bVO\b', filename, re.IGNORECASE):
             return "English"
         return "English"
 
-    # Fonction principale pour structurer les données en JSON
     def structure_data_to_json(self):
+        # Structure les données des fichiers sous-titres en format Json
         data = []
         for root, _, files in os.walk(self.root_path):
             for file in files:
@@ -81,8 +83,7 @@ class JSONGenerator:
                     season, episode = self.extract_season_episode(file)
                     language = self.extract_language(file)
 
-                    # Si nous ne pouvons pas déduire la saison à partir du nom du fichier,
-                    # nous utilisons le nom du dossier parent
+                    # Utiliser le nom du dossier pour la saison si nécessaire
                     if not season:
                         season_match = re.search(r'Saison (\d+)', root, re.IGNORECASE)
                         if season_match:
@@ -95,12 +96,13 @@ class JSONGenerator:
                         "language": language,
                         "content": open(os.path.join(root, file), 'r', encoding='utf-8', errors='ignore').read()
                     })
-        # Sauvegarde des données en JSON
+
         with open("structured_data.json", "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
         print(f"{len(data)} files processed and structured into JSON.")
 
     def execute(self):
+        # Exécute la fonction de structuration en Json
         self.structure_data_to_json()
 
 if __name__ == "__main__":
