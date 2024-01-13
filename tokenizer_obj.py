@@ -6,6 +6,7 @@ from nltk.corpus import stopwords
 
 class Tokenizer:
     def __init__(self, data_path, stopwords_fr_path, stopwords_en_path):
+        # Chargement des données et des listes de mots vides
         with open(data_path, 'r', encoding='utf-8') as file:
             self.data = json.load(file)
         with open(stopwords_fr_path, 'r', encoding='utf-8') as file:
@@ -15,15 +16,18 @@ class Tokenizer:
 
     @staticmethod
     def tokenize_text_simple(text):
+        # Tokenisation simple du texte
         return word_tokenize(text)
 
     @staticmethod
     def tokenize_text_with_stopwords(text, language="english"):
+        # Tokenisation avec suppression des mots vides
         tokens = word_tokenize(text)
         stop_words = set(stopwords.words(language))
         return [token for token in tokens if token.lower() not in stop_words]
 
     def tokenize_data(self):
+        # Tokenisation des données de chaque série
         for series in self.data:
             language = series.get("language", "english")
             if language == "VO":
@@ -33,11 +37,13 @@ class Tokenizer:
             series['tokenized_content'] = self.tokenize_text_simple(series['content'])
 
     def save_tokenized_data(self, tokenized_path):
+        # Sauvegarde des données tokenisées
         with open(tokenized_path, 'w', encoding='utf-8') as file:
             json.dump(self.data, file, ensure_ascii=False, indent=4)
         print("Tokenization completed and saved to tokenized_data.json")
 
     def clean_data(self):
+        # Nettoyage des données tokenisées
         token_frequency = defaultdict(int)
         total_series = len(self.data)
 
@@ -63,6 +69,7 @@ class Tokenizer:
         print("Nettoyage terminé.")
 
     def execute(self):
+        # Exécute les étapes de tokenisation et de nettoyage
         self.tokenize_data()
         tokenized_path = os.path.join(os.getcwd(), 'tokenized_data.json')
         self.save_tokenized_data(tokenized_path)
