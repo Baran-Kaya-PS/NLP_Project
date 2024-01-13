@@ -4,7 +4,7 @@ import tokenizer_obj
 import matrix_gen_obj
 
 def main(): # Modifier le nom des fichiers si c'est pas les bon noms
-
+    # Permet d'executer les 4 fichiers en meme temps (gain de temps)
     Cleaner_obj.main()
     generate_json_obj.main()
     tokenizer_obj.main()
